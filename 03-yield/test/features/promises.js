@@ -4,9 +4,25 @@ import {
 } from '../../src/features/promises'
 
 export default function() {
-  it.skip('should show prototype syntax in ES5', () => {
+  it('should wait for result in ES5', (done) => {
+    es5(function(err, val) {
+      if (err) {
+        done(err)
+      }
+      val.should.eql(10)
+      done()
+    })
   })
 
-  it.skip('should show class syntax in ES6', () => {
+  it('should show Promise behavior in ES6', (done) => {
+    const promise = es6()
+    promise
+      .then(val => {
+        val.should.eql(10)
+        done()
+      })
+      .catch(err => {
+        done(err)
+      })
   })
 }
