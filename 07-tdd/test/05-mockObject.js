@@ -1,7 +1,7 @@
 var should = require('should')
 var scalar = require('../src/05-mockObject.js')
 
-describe('mockObject (contains function Login that contains other functions (authoriser and login) and a login-counter)', function(){
+describe('magdas mockObject (contains function Login that contains other functions (authoriser and login) and a login-counter)', function(){
     
 	it('should return that 0 users have logged in', function(){
 		var no_user = {}

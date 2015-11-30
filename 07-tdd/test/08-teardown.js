@@ -1,7 +1,7 @@
 var should = require('should')
-var teardown = require('../src/teardown.js')
+var teardown = require('../src/08-teardown.js')
 
-describe('teardown', function() {
+describe('adams teardown', function() {
 	var testArray = [1, 2, 3, 4, 5]
 
 	afterEach(function() {

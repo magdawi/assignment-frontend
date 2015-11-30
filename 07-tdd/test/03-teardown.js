@@ -1,7 +1,7 @@
 var should = require('should')
 var scalar = require('../src/03-teardown.js')
 
-describe('teardown', function(){
+describe('magdas teardown', function(){
     afterEach(function() {
     	var arr = []
   	})

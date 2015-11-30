@@ -1,7 +1,7 @@
 var should = require('should')
 var scalar = require('../src/04-fixture.js')
 
-describe('fixture', function(){
+describe('magdas fixture', function(){
     
 	it('should return an object with a username and a birthdaydate - username: Adam, birthdaydate: 1990-01-17', function(){
 		var o = fixture();

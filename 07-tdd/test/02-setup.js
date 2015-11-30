@@ -1,7 +1,7 @@
 var should = require('should')
 var scalar = require('../src/02-setup.js')
 
-describe('setup', function(){
+describe('magdas setup', function(){
 	beforeEach(function() {
     	var arr = [1, 2, 3, 4]
   	})
