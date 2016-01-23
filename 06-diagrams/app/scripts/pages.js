@@ -7,6 +7,7 @@ import tplError from './templates/error.hbs'
 import barchart from './charts/barchart'
 import geo from './charts/geo'
 import circle from './charts/circle'
+import ownbarchart from './charts/ownbarchart'
 
 const content = document.getElementById('content')
 
@@ -34,24 +35,28 @@ function driversByAge(data) {
 export function home() {
   const drivers = fetch(`${config.api.url}/drivers.json?limit=10`)
   const courses = fetch(`${config.api.url}/circuits.json?limit=10`)
+  const constructors = fetch(`${config.api.url}/constructors.json?limit=10`)
+
   Promise
-    .all([drivers, courses])
+    .all([drivers, courses, constructors])
     .then(values => {
       return Promise.all(values.map(val => val.json()))
     })
     .then(data => {
       const driversData = driversByAge(data[0])
       const coursesData = data[1].MRData.CircuitTable.Circuits
-
+      const constructorsData = data[2].MRData.ConstructorTable.Constructors
       content.innerHTML = tplHome({
         drivers: driversData,
-        courses: coursesData
+        courses: coursesData,
+        constructors: constructorsData
       })
 
       // create charts
       barchart('chart1', driversData)
       geo('chart2', coursesData)
-      circle('chart3')
+      //circle('chart3')
+      ownbarchart('chart4', constructorsData)
     })
     .catch(err => {
       globalError = err

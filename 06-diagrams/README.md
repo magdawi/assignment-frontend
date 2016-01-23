@@ -1,4 +1,4 @@
-# 04-dev
+# 06-diagrams
 
 ## Setup
 
@@ -11,4 +11,8 @@ npm install
 ```bash
 grunt
 ```
+
+## Assignment
+- build own barchart
+- build own chart (i'm trying bubbles with liquid gauge)
 
