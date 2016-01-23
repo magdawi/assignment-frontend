@@ -19,7 +19,11 @@ function draw(chartId, data, width, height) {
     .append('path')
     .attr('d', path)
     .style('fill', function(d) {
-      return '#' + Math.floor(Math.random() * 16777215).toString(16)
+      if(d.id === "BMU"){
+        return 'none'
+      }
+      let colors = ['#F0D8A8', '#E08E79', '#F1D4AF', '#ECE5CE', '#C5E0DC']
+      return colors[Math.floor(Math.random() * 5)]
     })
 
   svg.selectAll('circle')
@@ -33,7 +37,7 @@ function draw(chartId, data, width, height) {
       return projection([d.Location.long, d.Location.lat])[1]
     })
     .attr('r', 10)
-    .style('fill', 'yellow')
+    .style('fill', '#55443D')
 }
 
 export default function(containerId, data) {

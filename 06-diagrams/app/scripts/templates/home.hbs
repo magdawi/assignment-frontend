@@ -8,18 +8,10 @@
     diagram.
   </p>
 </blockquote>
-<h2>Own barchart</h2>
+<h2>Assignment: Barchart</h2>
 <div class="row">
-  <div id="chart4" class="col-sm-12"></div>
-</div>
-<h2>Bubbles with liquid gauge</h2>
-<div class="row">
-  <div id="chart3" class="col-sm-12"></div>
-</div>
-<h2>Barchart</h2>
-<div class="row">
-  <div id="chart1" class="col-sm-6"></div>
-  <div class="col-sm-6">
+  <div id="chart4" class="col-sm-7"></div>
+  <div class="col-sm-5">
     <table class="table table-condensed table-responsive table-hover">
       <thead>
       <th class="text-left">Name</th>
@@ -36,10 +28,53 @@
     </table>
   </div>
 </div>
-<h2>Geo</h2>
+<h2>
+  Assignment: Bubbles with liquid gauge <br>
+  <small>click on bubble to switch on next data set</small>
+</h2>
 <div class="row">
-  <div id="chart2" class="col-sm-6"></div>
-  <div class="col-sm-6">
+  <div id="chart3" class="col-sm-7" onclick="bubble.update(50);"></div>
+  <div class="col-sm-5">
+    <table class="table table-condensed table-responsive table-hover">
+      <thead>
+      <th class="text-left">Name</th>
+      <th class="text-center">Age</th>
+      </thead>
+      <tbody>
+      {{#each drivers}}
+        <tr>
+          <td class="text-left">{{name}}</td>
+          <td class="text-center">{{age}}</td>
+        </tr>
+      {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div>
+<h2>Sample: Barchart</h2>
+<div class="row">
+  <div id="chart1" class="col-sm-7"></div>
+  <div class="col-sm-5">
+    <table class="table table-condensed table-responsive table-hover">
+      <thead>
+      <th class="text-left">Name</th>
+      <th class="text-center">Age</th>
+      </thead>
+      <tbody>
+      {{#each drivers}}
+        <tr>
+          <td class="text-left">{{name}}</td>
+          <td class="text-center">{{age}}</td>
+        </tr>
+      {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div>
+<h2>Sample: Geo</h2>
+<div class="row">
+  <div id="chart2" class="col-sm-7"></div>
+  <div class="col-sm-5">
     <table class="table table-condensed table-responsive table-hover">
       <thead>
       <th>Name</th>
