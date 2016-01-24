@@ -22,7 +22,7 @@ function draw(chartId, data, width, height) {
       if(d.id === "BMU"){
         return 'none'
       }
-      let colors = ['#F0D8A8', '#E08E79', '#F1D4AF', '#ECE5CE', '#C5E0DC']
+      let colors = ['#FFC490', '#E08E79', '#DBBB9A', '#EDC9A5', '#FCD8AE']
       return colors[Math.floor(Math.random() * 5)]
     })
 

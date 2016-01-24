@@ -3,7 +3,6 @@ import uuid from 'uuid'
 import tpl from '../templates/circles.hbs'
 import liquidFillGauge from '../liquidFillGauge.js'
 
-
 function draw(chartId, data, width, height) {
 
   var bubble = liquidFillGauge.loadLiquidFillGauge(`${chartId}`, data, config, height, width)
@@ -13,7 +12,6 @@ function draw(chartId, data, width, height) {
                       return d.age
                     })
 }
-
 
 export default function(containerId, data) {
   const container = document.getElementById(containerId)
