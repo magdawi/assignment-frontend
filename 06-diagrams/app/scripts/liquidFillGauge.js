@@ -218,7 +218,7 @@ function loadLiquidFillGauge(elementId, data, config, height, width) {
     }
 
     function GaugeUpdater(){
-        this.update = function(value, description){
+        this.update = function(value){
             var newFinalValue = parseFloat(value).toFixed(2)
             var textRounderUpdater = function(value){ return Math.round(value) }
             if(parseFloat(newFinalValue) != parseFloat(textRounderUpdater(newFinalValue))){
@@ -239,9 +239,6 @@ function loadLiquidFillGauge(elementId, data, config, height, width) {
             text2.transition()
                 .duration(config.waveRiseTime)
                 .tween('text', textTween)
-            description.transition()
-                .duration(config.waveRiseTime)
-                .tween('text', description)
 
             var fillPercent = Math.max(config.minValue, Math.min(config.maxValue, value))/config.maxValue
             var waveHeight = fillCircleRadius*waveHeightScale(fillPercent*100)

@@ -2,11 +2,19 @@ import d3 from 'd3'
 import uuid from 'uuid'
 import tpl from '../templates/circles.hbs'
 import liquidFillGauge from '../liquidFillGauge.js'
+import $ from 'jquery'
 
 function draw(chartId, data, width, height) {
 
-  var bubble = liquidFillGauge.loadLiquidFillGauge(`${chartId}`, data, config, height, width)
+
+  let bubble = liquidFillGauge.loadLiquidFillGauge(`${chartId}`, data, config, height, width)
   let config = liquidFillGauge.liquidFillGaugeDefaultSettings()
+
+  $('.driversAge').on('click', function () {
+    let value= $(this).children('.text-center')[0].textContent
+    bubble.update(value)
+  })
+  
 
   config.maxValue = d3.max(data, function(d) {
                       return d.age
