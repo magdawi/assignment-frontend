@@ -15,10 +15,11 @@ function draw(chartId, data, width, height) {
     bubble.update(value)
   })
   
-
   config.maxValue = d3.max(data, function(d) {
                       return d.age
                     })
+
+  
 }
 
 export default function(containerId, data) {
